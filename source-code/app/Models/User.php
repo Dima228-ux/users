@@ -2,14 +2,21 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Class User
+ * @package App\Models
+ */
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+    use CrudTrait;
+    use HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -20,6 +27,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'telegram',
+        'settings',
     ];
 
     /**
@@ -42,6 +52,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'settings' => 'array',
         ];
     }
+
 }

@@ -4,8 +4,16 @@ namespace App\Traits;
 
 use Illuminate\Support\Str;
 
+/**
+ * Trait HydratesProps
+ * @package App\Traits
+ */
 trait HydratesProps
 {
+    /**
+     * @param array $data
+     * @return $this
+     */
     public function hydrate(array $data)
     {
         foreach ($data as $prop => $value) {
@@ -18,9 +26,13 @@ trait HydratesProps
             }
         }
 
-        return  $this;
+        return $this;
     }
 
+    /**
+     * @param $prop
+     * @return string
+     */
     public function getSetterName($prop): string
     {
         return 'set' . ucfirst(Str::camel($prop));

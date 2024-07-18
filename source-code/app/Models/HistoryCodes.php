@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * Class HistoryCodes
+ * @package App\Models
+ */
 class HistoryCodes extends Model
 {
     use HasFactory, Notifiable;
