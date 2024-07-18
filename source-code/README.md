@@ -1,7 +1,7 @@
 ## Backend
 1.  Переходим в директорию
 
-        cd source-code/backend
+        cd source-code
 
 2.  Копируем .env.example в .env
 3.  Скачиваем зависимости
